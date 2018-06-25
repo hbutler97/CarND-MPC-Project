@@ -57,7 +57,7 @@ After that the vector of points is converted to an Eigen vector so that it is re
 A delay of 100 ms need to be taken care of after the MPC works. When this latency was first introduced, the model oscillated about the reference trajectory.
 
 Initial states were set after 100 ms. This allows the vehicle to "look ahead" and correct for where it will be in the future instead of where it is currently positioned.
-
+```
 double Lf = 2.67;
 double dt = 0.1;
 
@@ -71,3 +71,4 @@ double pred_epsi = epsi + pred_psi;
 Eigen::VectorXd state(6);
 //state << 0, 0, 0, v, cte, epsi;
 state << pred_px, pred_py, pred_psi, pred_v, pred_cte, pred_epsi;
+```
